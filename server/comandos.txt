@@ -7,3 +7,6 @@ npm i typescript -D
 # instalação e configuração do gitignore para projetos node
 npm i gitignore -g
 gitignore node
+
+# realiza a integração entre o typescript e o node
+npm i  @types/node -D
