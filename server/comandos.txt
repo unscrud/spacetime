@@ -1,0 +1,5 @@
+# cria um projeto javascript
+npm init -y
+
+# typescript instalado como dependência de desenvolvimento
+npm i typescript -D
