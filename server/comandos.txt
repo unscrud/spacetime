@@ -16,3 +16,6 @@ npx tsc --init
 
 # conversor de typescript para javascript em tempo de desenvolvimento
 npm i tsx -D
+
+# biblioteca para receber e responder requisições http
+npm i fastify
