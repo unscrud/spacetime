@@ -10,3 +10,6 @@ gitignore node
 
 # realiza a integração entre o typescript e o node
 npm i  @types/node -D
+
+# cria o arquivo tsconfig com as configurações do typescript
+npx tsc --init
