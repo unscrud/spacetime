@@ -28,3 +28,9 @@ npx eslint --init
 
 # configuração fornecida
 npm i @rocketseat/eslint-config -D
+
+# instalação do orm usado em desenvolvimento
+npm i prisma -D
+
+# inicializando o db sqlite
+npx prisma init --datasource-provider SQLite
