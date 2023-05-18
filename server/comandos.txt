@@ -19,3 +19,12 @@ npm i tsx -D
 
 # biblioteca para receber e responder requisições http
 npm i fastify
+
+# ferramenta de padronização de código em tempo de desenvolvimento
+npm i eslint -D
+
+# configuração manual do eslint
+npx eslint --init
+
+# configuração fornecida
+npm i @rocketseat/eslint-config -D
