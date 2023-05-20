@@ -34,3 +34,6 @@ npm i prisma -D
 
 # inicializando o db sqlite
 npx prisma init --datasource-provider SQLite
+
+# lê o arquivo schema.prisma e detecta as alterações no arquivo desde a ultima excecução
+npx prisma migrate dev
