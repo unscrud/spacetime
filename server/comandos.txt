@@ -26,7 +26,7 @@ npm i eslint -D
 # configuração manual do eslint
 npx eslint --init
 
-# configuração fornecida
+# configuração fornecida para o eslint
 npm i @rocketseat/eslint-config -D
 
 # instalação do orm usado em desenvolvimento
