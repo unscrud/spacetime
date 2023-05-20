@@ -3,3 +3,6 @@ npx create-next-app@latest web  --use-npm
 
 # configuração fornecida para o eslint
 npm i @rocketseat/eslint-config -D
+
+# plugin para ajuste automático das classes do tailwindcss
+npm i prettier-plugin-tailwindcss -D
