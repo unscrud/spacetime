@@ -1,0 +1,2 @@
+# crição do projeto mobile
+npx create-expo-app mobile
