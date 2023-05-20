@@ -1,0 +1,2 @@
+# criação do projeto de fora do diretório, usando sim em todas as perguntas
+npx create-next-app@latest web  --use-npm
