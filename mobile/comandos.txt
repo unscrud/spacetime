@@ -4,3 +4,8 @@ npx create-expo-app mobile
 # antes da primeira execução é necessário trocar a extensão do arquivo App.js para App.tsx e rodar
 npm run start
 # na execução do script vai perguntar se quer instalar as dependências necessárias para o typescript
+
+# para uso do tailwind no reac native
+npm i nativewind
+npm i tailwindcss -D
+npx tailwindcss init
