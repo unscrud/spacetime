@@ -2,6 +2,10 @@ const styles = {
   color: '#f00',
 }
 
-export function Button(props) {
+interface ButtonProps {
+  title: string
+}
+
+export function Button(props: ButtonProps) {
   return <p style={styles}>{props.title}</p>
 }
