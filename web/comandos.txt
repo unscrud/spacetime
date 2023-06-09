@@ -6,3 +6,6 @@ npm i @rocketseat/eslint-config -D
 
 # plugin para ajuste automático das classes do tailwindcss
 npm i prettier-plugin-tailwindcss -D
+
+# pacote de icones
+npm i lucide-react
