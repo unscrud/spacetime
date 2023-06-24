@@ -13,3 +13,6 @@ npx tailwindcss init
 # configuração da formatação do código
 npm i eslint @rocketseat/eslint-config -D
 npm i prettier-plugin-tailwindcss -D
+
+# fontes utilizadas
+npx expo install @expo-google-fonts/roboto @expo-google-fonts/bai-jamjuree expo-font
