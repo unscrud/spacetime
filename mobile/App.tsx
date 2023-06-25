@@ -5,7 +5,8 @@ import {
   useFonts,
 } from '@expo-google-fonts/roboto'
 import { StatusBar } from 'expo-status-bar'
-import { Text, View } from 'react-native'
+import { ImageBackground } from 'react-native'
+import blurBg from './src/assets/luz.png'
 
 export default function App() {
   const [hasLoadedFonts] = useFonts({
@@ -19,10 +20,15 @@ export default function App() {
   }
 
   return (
-    <View className="flex-1 items-center justify-center bg-gray-950">
-      <Text className="font-title text-4xl text-zinc-50">Olá</Text>
-      <Text className="font-alt text-4xl text-zinc-50">mundo!</Text>
+    <ImageBackground
+      source={blurBg}
+      imageStyle={{
+        position: 'absolute',
+        left: '-100%',
+      }}
+      className="relative flex-1 items-center bg-gray-900"
+    >
       <StatusBar style="light" translucent />
-    </View>
+    </ImageBackground>
   )
 }
