@@ -16,3 +16,7 @@ npm i prettier-plugin-tailwindcss -D
 
 # fontes utilizadas
 npx expo install @expo-google-fonts/roboto @expo-google-fonts/bai-jamjuree expo-font
+
+# necessários para uso de svg via import
+expo install react-native-svg
+npm i -D react-native-svg-transformer
