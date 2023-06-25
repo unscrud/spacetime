@@ -7,6 +7,7 @@ import {
 import { StatusBar } from 'expo-status-bar'
 import { ImageBackground } from 'react-native'
 import blurBg from './src/assets/luz.png'
+import Stripes from './src/assets/stripes.svg'
 
 export default function App() {
   const [hasLoadedFonts] = useFonts({
@@ -28,6 +29,7 @@ export default function App() {
       }}
       className="relative flex-1 items-center bg-gray-900"
     >
+      <Stripes className="absolute left-2" />
       <StatusBar style="light" translucent />
     </ImageBackground>
   )
