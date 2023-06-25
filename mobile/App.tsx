@@ -6,7 +6,8 @@ import {
 } from '@expo-google-fonts/roboto'
 import { StatusBar } from 'expo-status-bar'
 import { styled } from 'nativewind'
-import { ImageBackground } from 'react-native'
+import { ImageBackground, View } from 'react-native'
+import Logo from './src/assets/logo.svg'
 import blurBg from './src/assets/luz.png'
 import Stripes from './src/assets/stripes.svg'
 
@@ -33,6 +34,11 @@ export default function App() {
       className="relative flex-1 items-center bg-gray-900"
     >
       <StiledStripes className="absolute left-2" />
+
+      <View className="flex-1 items-center justify-center gap-6">
+        <Logo />
+      </View>
+
       <StatusBar style="light" translucent />
     </ImageBackground>
   )
