@@ -43,3 +43,8 @@ npx prisma studio
 
 # para acessar o db de dentro do projeto
 npm i @prisma/client
+
+# em caso de adicionar campos a uma entidade preexistente com dados (descartáveis)
+npx prisma migrate reset
+# para limpar o banco, e depois 
+npx prisma migrate dev
