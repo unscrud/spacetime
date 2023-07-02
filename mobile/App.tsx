@@ -6,7 +6,7 @@ import {
 } from '@expo-google-fonts/roboto'
 import { StatusBar } from 'expo-status-bar'
 import { styled } from 'nativewind'
-import { ImageBackground, View } from 'react-native'
+import { ImageBackground, Text, View } from 'react-native'
 import Logo from './src/assets/logo.svg'
 import blurBg from './src/assets/luz.png'
 import Stripes from './src/assets/stripes.svg'
@@ -31,12 +31,22 @@ export default function App() {
         position: 'absolute',
         left: '-100%',
       }}
-      className="relative flex-1 items-center bg-gray-900"
+      className="relative flex-1 items-center bg-gray-900 px-8"
     >
       <StiledStripes className="absolute left-2" />
 
       <View className="flex-1 items-center justify-center gap-6">
         <Logo />
+
+        <View className="space-y-2">
+          <Text className=" text-center font-title text-2xl leading-tight text-gray-50">
+            Sua cápsula do tempo
+          </Text>
+          <Text className="text-center font-body text-base leading-relaxed text-gray-100">
+            Colecione momentos marcantes da sua jornada e compartilhe (se
+            quiser) com o mundo!
+          </Text>
+        </View>
       </View>
 
       <StatusBar style="light" translucent />
