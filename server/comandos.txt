@@ -48,3 +48,6 @@ npm i @prisma/client
 npx prisma migrate reset
 # para limpar o banco, e depois 
 npx prisma migrate dev
+
+# tratamento e validação de esquema typescript
+npm i zod
