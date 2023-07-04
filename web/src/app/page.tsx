@@ -1,4 +1,5 @@
 import { Copyright } from '@/components/Copyright'
+import { EmptyMemories } from '@/components/EmptyMemories'
 import { Hero } from '@/components/Hero'
 import { Signin } from '@/components/Signin'
 
@@ -22,14 +23,7 @@ export default function Home() {
 
       {/* Right */}
       <div className="flex flex-col bg-[url(../assets/bg-stars.svg)] bg-cover p-16">
-        <div className="flex flex-1 items-center justify-center">
-          <p className="w-[360px] text-center leading-relaxed">
-            Você ainda não registrou nenhuma lembrança, começe a{' '}
-            <a className="underline hover:text-gray-50" href="">
-              criar agora
-            </a>
-          </p>
-        </div>
+        <EmptyMemories />
       </div>
     </main>
   )
