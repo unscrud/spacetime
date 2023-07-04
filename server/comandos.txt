@@ -54,3 +54,6 @@ npm i zod
 
 # segurança, define quais urls podem acessar o backend
 npm i @fastify/cors
+
+# para que seja possível ler as variáveis de ambiente
+npm i dotenv -D
