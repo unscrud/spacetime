@@ -1,3 +1,4 @@
+import { Copyright } from '@/components/Copyright'
 import { User } from 'lucide-react'
 import Image from 'next/image'
 import logo from '../assets/logo.svg'
@@ -48,17 +49,7 @@ export default function Home() {
         </div>
 
         {/* Copyright */}
-        <div className="text-sm leading-relaxed text-gray-200">
-          Feito com 💜 no NLW da{' '}
-          <a
-            className="underline hover:text-gray-100"
-            href="https://rocketseat.com.br"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Rocketseat
-          </a>
-        </div>
+        <Copyright />
       </div>
 
       {/* Right */}
