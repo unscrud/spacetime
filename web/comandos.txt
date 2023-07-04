@@ -9,3 +9,27 @@ npm i prettier-plugin-tailwindcss -D
 
 # pacote de icones
 npm i lucide-react
+
+# A autenticação será realizada pelo github e para isso devemos
+# em uma conta logada do github, clicar no perfil,
+# opção settings, então developer settings, e por fim 
+# oAuth Apps onde registraremos um novo app onde iremos definir
+# um nome da aplicação, sua homepage, aqui usaremos
+# http://localhost:3000 e uma Authorization callback URL que 
+# será igual à homepage mais /api/auth/callback 
+
+# na conclusão, o github retornará um Client ID que colocaremos
+# em um arquivo .env na raiz do frontend e do backend, sendo que
+# no frontend precisamos usar conforme abaixo:
+NEXT_PUBLIC_GITHUB_CLIENT_ID=ChaveFornecidaAoRegistrarOApp
+
+# enquanto que no backend, não é necessário o prefixo
+NEXT_PUBLIC_
+
+# isso se dá por uma peculiaridade do next, e resumindo,
+# no frontend só precisaremos do id do cliente, enquanto 
+# que no backend precisaremos de ambos (id e secret)
+
+# na mesma tela clicaremos em Generate a new client secret
+# que será usada no .env do backend da seguinte forma:
+GITHUB_CLIENT_SECRET=SecretGeradaNoPassoAcima
