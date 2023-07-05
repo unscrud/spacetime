@@ -1,5 +1,8 @@
+import 'dotenv/config'
+
 import cors from '@fastify/cors'
 import fastify from 'fastify'
+import { authRoutes } from './routes/auth'
 import { memoriesRoutes } from './routes/memories'
 import { usersRoutes } from './routes/users'
 
@@ -8,6 +11,7 @@ const app = fastify()
 app.register(cors, {
   origin: true,
 })
+app.register(authRoutes)
 app.register(memoriesRoutes)
 app.register(usersRoutes)
 
