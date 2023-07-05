@@ -41,16 +41,25 @@ export async function authRoutes(app: FastifyInstance) {
 
     const userInfo = userSchema.parse(userResponse.data)
 
-    const user = await prisma.user.findUnique({
+    let user = await prisma.user.findUnique({
       where: {
         githubId: userInfo.id,
       },
     })
 
-    console.log(user)
+    if (!user) {
+      user = await prisma.user.create({
+        data: {
+          githubId: userInfo.id,
+          login: userInfo.login,
+          name: userInfo.name,
+          avatarUrl: userInfo.avatar_url,
+        },
+      })
+    }
 
     return {
-      user: userInfo,
+      user,
     }
   })
 }
