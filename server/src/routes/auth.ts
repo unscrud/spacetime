@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { FastifyInstance } from 'fastify'
 import z from 'zod'
+import { prisma } from '../lib/prisma'
 
 export async function authRoutes(app: FastifyInstance) {
   app.post('/register', async (request) => {
@@ -38,10 +39,18 @@ export async function authRoutes(app: FastifyInstance) {
       avatar_url: z.string().url(),
     })
 
-    const user = userSchema.parse(userResponse.data)
+    const userInfo = userSchema.parse(userResponse.data)
+
+    const user = await prisma.user.findUnique({
+      where: {
+        githubId: userInfo.id,
+      },
+    })
+
+    console.log(user)
 
     return {
-      user,
+      user: userInfo,
     }
   })
 }
