@@ -57,3 +57,6 @@ npm i @fastify/cors
 
 # para que seja possível ler as variáveis de ambiente
 npm i dotenv -D
+
+# para acessar api do github
+npm i axios
