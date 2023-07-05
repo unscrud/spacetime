@@ -60,3 +60,6 @@ npm i dotenv -D
 
 # para acessar api do github
 npm i axios
+
+# uso do jwt via fastify
+npm i @fastify/jwt
