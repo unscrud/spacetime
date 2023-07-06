@@ -36,3 +36,6 @@ GITHUB_CLIENT_SECRET=SecretGeradaNoPassoAcima
 
 # axios para enviar o codigo para o backend
 npm i axios
+
+# para pegar dados do token
+npm i jwt-decode
