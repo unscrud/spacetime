@@ -1,6 +1,7 @@
 import { Copyright } from '@/components/Copyright'
 import { EmptyMemories } from '@/components/EmptyMemories'
 import { Hero } from '@/components/Hero'
+import { Profile } from '@/components/Profile'
 import { Signin } from '@/components/Signin'
 import { cookies } from 'next/headers'
 
@@ -17,7 +18,7 @@ export default function Home() {
         {/* Stripes */}
         <div className="absolute bottom-0 right-2 top-0 w-2 bg-stripes" />
 
-        <Signin />
+        {isAutenticated ? <Profile /> : <Signin />}
 
         <Hero />
 
