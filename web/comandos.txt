@@ -33,3 +33,6 @@ NEXT_PUBLIC_
 # na mesma tela clicaremos em Generate a new client secret
 # que será usada no .env do backend da seguinte forma:
 GITHUB_CLIENT_SECRET=SecretGeradaNoPassoAcima
+
+# axios para enviar o codigo para o backend
+npm i axios
