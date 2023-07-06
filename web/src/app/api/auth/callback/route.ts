@@ -10,4 +10,6 @@ export async function GET(request: NextRequest) {
   })
 
   const { token } = registerResponse.data
+
+  const redirectURL = new URL('/', request.url)
 }
