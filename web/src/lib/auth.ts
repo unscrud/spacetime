@@ -1,3 +1,4 @@
+import decode from 'jwt-decode'
 import { cookies } from 'next/headers'
 
 interface User {
@@ -12,4 +13,8 @@ export function getUser(): User {
   if (!token) {
     throw new Error('Unauthenticated.')
   }
+
+  const user: User = decode(token)
+
+  return user
 }
