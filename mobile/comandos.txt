@@ -26,3 +26,17 @@ npm i -D react-native-svg-transformer
 # links
 https://github.com/software-mansion/react-native-svg
 https://github.com/kristerkari/react-native-svg-transformer
+
+# Habilitar autenticação baseada em browser com oauth
+npx expo install expo-auth-session expo-crypto
+* basicamente será utilizado o mesmo procedimento de criação de app oauth no github 
+* que foi feito no módulo web
+
+# para mais detalhes pesquisar authsession expo documentation
+https://docs.expo.dev/versions/latest/sdk/auth-session/
+
+# e vamos para a authentication guide escolhemos a do github...
+https://docs.expo.dev/guides/authentication/
+https://docs.expo.dev/guides/authentication/#github
+
+
