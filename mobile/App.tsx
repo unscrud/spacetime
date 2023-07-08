@@ -4,6 +4,7 @@ import {
   Roboto_700Bold,
   useFonts,
 } from '@expo-google-fonts/roboto'
+import { makeRedirectUri, useAuthRequest } from 'expo-auth-session'
 import { StatusBar } from 'expo-status-bar'
 import { styled } from 'nativewind'
 import { ImageBackground, Text, TouchableOpacity, View } from 'react-native'
@@ -13,7 +14,25 @@ import Stripes from './src/assets/stripes.svg'
 
 const StiledStripes = styled(Stripes)
 
+const discovery = {
+  authorizationEndpoint: 'https://github.com/login/oauth/authorize',
+  tokenEndpoint: 'https://github.com/login/oauth/access_token',
+  revocationEndpoint:
+    'https://github.com/settings/connections/applications/GithubClientId',
+}
+
 export default function App() {
+  const [request, response, signInWithGithub] = useAuthRequest(
+    {
+      clientId: 'GithubClientId',
+      scopes: ['identity'],
+      redirectUri: makeRedirectUri({
+        scheme: 'spacetime',
+      }),
+    },
+    discovery,
+  )
+
   const [hasLoadedFonts] = useFonts({
     Roboto_400Regular,
     Roboto_700Bold,
@@ -51,6 +70,7 @@ export default function App() {
         <TouchableOpacity
           activeOpacity={0.7}
           className="rounded-full bg-green-500 px-5 py-2"
+          onPress={() => signInWithGithub()}
         >
           <Text className="font-alt text-sm uppercase text-black">
             Cadastrar Lembrança
