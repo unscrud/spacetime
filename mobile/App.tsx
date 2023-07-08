@@ -7,6 +7,7 @@ import {
 import { makeRedirectUri, useAuthRequest } from 'expo-auth-session'
 import { StatusBar } from 'expo-status-bar'
 import { styled } from 'nativewind'
+import { useEffect } from 'react'
 import { ImageBackground, Text, TouchableOpacity, View } from 'react-native'
 import Logo from './src/assets/logo.svg'
 import blurBg from './src/assets/luz.png'
@@ -32,6 +33,13 @@ export default function App() {
     },
     discovery,
   )
+
+  useEffect(() => {
+    if (response?.type === 'success') {
+      const { code } = response.params
+      console.log(code)
+    }
+  }, [response])
 
   const [hasLoadedFonts] = useFonts({
     Roboto_400Regular,
