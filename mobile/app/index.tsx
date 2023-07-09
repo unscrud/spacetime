@@ -10,10 +10,10 @@ import { StatusBar } from 'expo-status-bar'
 import { styled } from 'nativewind'
 import { useEffect } from 'react'
 import { ImageBackground, Text, TouchableOpacity, View } from 'react-native'
-import Logo from './src/assets/logo.svg'
-import blurBg from './src/assets/luz.png'
-import Stripes from './src/assets/stripes.svg'
-import { api } from './src/lib/api'
+import Logo from '../src/assets/logo.svg'
+import blurBg from '../src/assets/luz.png'
+import Stripes from '../src/assets/stripes.svg'
+import { api } from '../src/lib/api'
 
 const StiledStripes = styled(Stripes)
 
