@@ -42,3 +42,6 @@ https://docs.expo.dev/versions/latest/sdk/auth-session/
 # e vamos para a authentication guide escolhemos a do github...
 https://docs.expo.dev/guides/authentication/
 https://docs.expo.dev/guides/authentication/#github
+
+# para realizar chamadas ao backend
+npm i axios
