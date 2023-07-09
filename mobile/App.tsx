@@ -5,6 +5,7 @@ import {
   useFonts,
 } from '@expo-google-fonts/roboto'
 import { makeRedirectUri, useAuthRequest } from 'expo-auth-session'
+import * as SecureStore from 'expo-secure-store'
 import { StatusBar } from 'expo-status-bar'
 import { styled } from 'nativewind'
 import { useEffect } from 'react'
@@ -24,7 +25,7 @@ const discovery = {
 }
 
 export default function App() {
-  const [request, response, signInWithGithub] = useAuthRequest(
+  const [, response, signInWithGithub] = useAuthRequest(
     {
       clientId: 'GithubClientId',
       scopes: ['identity'],
@@ -51,7 +52,10 @@ export default function App() {
         })
         .then((response) => {
           const { token } = response.data
-          console.log(token)
+          SecureStore.setItemAsync('token', token)
+        })
+        .catch((error) => {
+          console.log(error)
         })
     }
   }, [response])
