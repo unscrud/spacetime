@@ -45,3 +45,8 @@ https://docs.expo.dev/guides/authentication/#github
 
 # para realizar chamadas ao backend
 npm i axios
+
+# Para armazenar o token no celular
+npx expo install expo-secure-store
+# URL
+https://docs.expo.dev/versions/latest/sdk/securestore/
