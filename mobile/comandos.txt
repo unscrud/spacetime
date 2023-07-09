@@ -50,3 +50,10 @@ npm i axios
 npx expo install expo-secure-store
 # URL
 https://docs.expo.dev/versions/latest/sdk/securestore/
+
+# definição de rotaas no expo
+npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar react-native-gesture-handler
+
+# URL
+https://docs.expo.dev/guides/routing-and-navigation/
+https://expo.github.io/router/docs/
