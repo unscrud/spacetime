@@ -12,6 +12,7 @@ import { ImageBackground, Text, TouchableOpacity, View } from 'react-native'
 import Logo from './src/assets/logo.svg'
 import blurBg from './src/assets/luz.png'
 import Stripes from './src/assets/stripes.svg'
+import { api } from './src/lib/api'
 
 const StiledStripes = styled(Stripes)
 
@@ -43,7 +44,15 @@ export default function App() {
 
     if (response?.type === 'success') {
       const { code } = response.params
-      console.log(code)
+
+      api
+        .post('/register', {
+          code,
+        })
+        .then((response) => {
+          const { token } = response.data
+          console.log(token)
+        })
     }
   }, [response])
 
