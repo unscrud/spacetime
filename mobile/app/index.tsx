@@ -5,6 +5,7 @@ import {
   useFonts,
 } from '@expo-google-fonts/roboto'
 import { makeRedirectUri, useAuthRequest } from 'expo-auth-session'
+import { useRouter } from 'expo-router'
 import * as SecureStore from 'expo-secure-store'
 import { StatusBar } from 'expo-status-bar'
 import { styled } from 'nativewind'
@@ -25,6 +26,8 @@ const discovery = {
 }
 
 export default function App() {
+  const router = useRouter()
+
   const [, response, signInWithGithub] = useAuthRequest(
     {
       clientId: 'GithubClientId',
@@ -36,6 +39,17 @@ export default function App() {
     discovery,
   )
 
+  async function handleGithubOAuthCode(code: string) {
+    const response = await api.post('/register', {
+      code,
+    })
+
+    const { token } = response.data
+    await SecureStore.setItemAsync('token', token)
+
+    router.push('/memories')
+  }
+
   useEffect(() => {
     // console.log(
     //   makeRedirectUri({
@@ -46,17 +60,7 @@ export default function App() {
     if (response?.type === 'success') {
       const { code } = response.params
 
-      api
-        .post('/register', {
-          code,
-        })
-        .then((response) => {
-          const { token } = response.data
-          SecureStore.setItemAsync('token', token)
-        })
-        .catch((error) => {
-          console.log(error)
-        })
+      handleGithubOAuthCode(code)
     }
   }, [response])
 
