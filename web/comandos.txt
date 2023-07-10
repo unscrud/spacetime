@@ -39,3 +39,7 @@ npm i axios
 
 # para pegar dados do token
 npm i jwt-decode
+
+# permite melhor personalização dos elementos de um form
+npm install -D @tailwindcss/forms
+* LINK: https://github.com/tailwindlabs/tailwindcss-forms
