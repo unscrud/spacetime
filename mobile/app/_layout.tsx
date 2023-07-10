@@ -5,8 +5,10 @@ import {
   useFonts,
 } from '@expo-google-fonts/roboto'
 import { SplashScreen, Stack } from 'expo-router'
+import * as SecureStore from 'expo-secure-store'
 import { StatusBar } from 'expo-status-bar'
 import { styled } from 'nativewind'
+import { useEffect, useState } from 'react'
 import { ImageBackground } from 'react-native'
 import blurBg from '../src/assets/luz.png'
 import Stripes from '../src/assets/stripes.svg'
@@ -14,6 +16,16 @@ import Stripes from '../src/assets/stripes.svg'
 const StiledStripes = styled(Stripes)
 
 export default function Layout() {
+  const [isUserAuthenticated, setIsUserAuthenticated] = useState<
+    null | boolean
+  >(null)
+
+  useEffect(() => {
+    SecureStore.getItemAsync('token').then((token) => {
+      setIsUserAuthenticated(!!token)
+    })
+  }, [])
+
   const [hasLoadedFonts] = useFonts({
     Roboto_400Regular,
     Roboto_700Bold,
@@ -44,7 +56,10 @@ export default function Layout() {
             backgroundColor: 'transparent',
           },
         }}
-      />
+      >
+        <Stack.Screen name="index" redirect={isUserAuthenticated} />
+        <Stack.Screen name="memories" />
+      </Stack>
     </ImageBackground>
   )
 }
