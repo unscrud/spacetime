@@ -37,7 +37,14 @@ export default function Layout() {
 
       <StatusBar style="light" translucent />
 
-      <Stack />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          contentStyle: {
+            backgroundColor: 'transparent',
+          },
+        }}
+      />
     </ImageBackground>
   )
 }
