@@ -4,7 +4,7 @@ import {
   Roboto_700Bold,
   useFonts,
 } from '@expo-google-fonts/roboto'
-import { Slot, SplashScreen } from 'expo-router'
+import { SplashScreen, Stack } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 import { styled } from 'nativewind'
 import { ImageBackground } from 'react-native'
@@ -31,13 +31,13 @@ export default function Layout() {
         position: 'absolute',
         left: '-100%',
       }}
-      className="relative flex-1 items-center bg-gray-900 px-8 py-10"
+      className="relative flex-1 bg-gray-900"
     >
       <StiledStripes className="absolute left-2" />
 
       <StatusBar style="light" translucent />
 
-      <Slot />
+      <Stack />
     </ImageBackground>
   )
 }
