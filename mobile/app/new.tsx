@@ -1,7 +1,7 @@
 import Icon from '@expo/vector-icons/Feather'
 import { Link } from 'expo-router'
 import { useState } from 'react'
-import { Switch, Text, View } from 'react-native'
+import { Switch, Text, TextInput, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import Logo from '../src/assets/logo.svg'
@@ -49,6 +49,13 @@ export default function NewMemory() {
             </Text>
           </View>
         </TouchableOpacity>
+
+        <TextInput
+          multiline
+          className="p-0 font-body text-lg text-gray-50"
+          placeholder="Fique livre para adicionar fotos, vídeos e relatos sobre essa experiência que você quer lembrar para sempre."
+          placeholderTextColor="#56565a"
+        />
       </View>
     </View>
   )
