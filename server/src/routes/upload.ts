@@ -9,5 +9,9 @@ export async function uploadRoutes(app: FastifyInstance) {
         fileSize: 5_242_880, // 5MB
       },
     })
+
+    if (!upload) {
+      return reply.status(400).send()
+    }
   })
 }
