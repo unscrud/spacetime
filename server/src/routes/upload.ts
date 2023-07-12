@@ -1,4 +1,6 @@
 import { FastifyInstance } from 'fastify'
+import { randomUUID } from 'node:crypto'
+import { extname } from 'node:path'
 
 export async function uploadRoutes(app: FastifyInstance) {
   // para testar...
@@ -17,12 +19,15 @@ export async function uploadRoutes(app: FastifyInstance) {
     const mimetypeRegex = /^(image|video)\/[a-zA-Z]+/
     const isValidFileFormat = mimetypeRegex.test(upload.mimetype)
 
-    console.log(upload.mimetype)
-
     if (!isValidFileFormat) {
       return reply.status(400).send()
     }
 
-    console.log(upload.filename)
+    const fileId = randomUUID()
+    const extension = extname(upload.filename)
+
+    const fileName = fileId.concat(extension)
+
+    console.log(fileName)
   })
 }
