@@ -67,3 +67,6 @@ npm i @fastify/jwt
 # para trartar recebimento de arquivos
 npm i @fastify/multipart
 * LINK: https://github.com/fastify/fastify-multipart
+
+# permite tornar uma pasta do projeto pública
+npm i @fastify/static
