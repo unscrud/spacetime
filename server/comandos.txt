@@ -63,3 +63,6 @@ npm i axios
 
 # uso do jwt via fastify
 npm i @fastify/jwt
+
+# para trartar recebimento de arquivos
+npm i @fastify/multipart
