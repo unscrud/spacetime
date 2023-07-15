@@ -3,9 +3,12 @@ import { MediaPicker } from '@/components/MediaPicker'
 import { api } from '@/lib/api'
 import Cookie from 'js-cookie'
 import { Camera } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 import { FormEvent } from 'react'
 
 export function NewMemoryForm() {
+  const router = useRouter()
+
   async function handleCreateMemory(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
@@ -39,6 +42,8 @@ export function NewMemoryForm() {
         },
       },
     )
+
+    router.push('/')
   }
 
   return (
