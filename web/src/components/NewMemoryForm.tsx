@@ -1,6 +1,7 @@
 'use client'
 import { MediaPicker } from '@/components/MediaPicker'
 import { api } from '@/lib/api'
+import Cookie from 'js-cookie'
 import { Camera } from 'lucide-react'
 import { FormEvent } from 'react'
 
@@ -22,6 +23,22 @@ export function NewMemoryForm() {
 
       coverUrl = uploadResponse.data.fileUrl
     }
+
+    const token = Cookie.get('token')
+
+    await api.post(
+      '/memories',
+      {
+        coverUrl,
+        content: formData.get('content'),
+        isPublic: formData.get('isPublic'),
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    )
   }
 
   return (
