@@ -43,3 +43,6 @@ npm i jwt-decode
 # permite melhor personalização dos elementos de um form
 npm install -D @tailwindcss/forms
 * LINK: https://github.com/tailwindlabs/tailwindcss-forms
+
+# com 'use client' pegamos o cookie do token de modo diferente
+npm i js-cookie
