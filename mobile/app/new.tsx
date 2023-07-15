@@ -11,8 +11,10 @@ export default function NewMemory() {
 
   const [isPublic, setIsPublic] = useState(false)
 
+  const [content, setContent] = useState('')
+
   function handleCreateMemory() {
-    console.log('oi')
+    console.log(isPublic, content)
   }
 
   return (
@@ -57,6 +59,8 @@ export default function NewMemory() {
 
         <TextInput
           multiline
+          value={content}
+          onChangeText={setContent}
           className="p-0 font-body text-lg text-gray-50"
           placeholder="Fique livre para adicionar fotos, vídeos e relatos sobre essa experiência que você quer lembrar para sempre."
           placeholderTextColor="#56565a"
