@@ -1,4 +1,5 @@
 import Icon from '@expo/vector-icons/Feather'
+import * as ImagePicker from 'expo-image-picker'
 import { Link } from 'expo-router'
 import { useState } from 'react'
 import { ScrollView, Switch, Text, TextInput, View } from 'react-native'
@@ -12,6 +13,22 @@ export default function NewMemory() {
   const [isPublic, setIsPublic] = useState(false)
 
   const [content, setContent] = useState('')
+
+  async function openImagePicker() {
+    // No permissions request is necessary for launching the image library
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    })
+
+    console.log(result)
+
+    if (!result.canceled) {
+      setImage(result.assets[0].uri)
+    }
+  }
 
   function handleCreateMemory() {
     console.log(isPublic, content)
@@ -47,6 +64,7 @@ export default function NewMemory() {
 
         <TouchableOpacity
           activeOpacity={0.7}
+          onPress={openImagePicker}
           className="h-32 items-center justify-center rounded-lg border border-dashed border-gray-500 bg-black/20"
         >
           <View className="flex-row items-center gap-2">
