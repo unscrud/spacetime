@@ -10,6 +10,11 @@ export default function NewMemory() {
   const { bottom, top } = useSafeAreaInsets()
 
   const [isPublic, setIsPublic] = useState(false)
+
+  function handleCreateMemory() {
+    console.log('oi')
+  }
+
   return (
     <ScrollView
       className="flex-1 px-8"
@@ -59,7 +64,7 @@ export default function NewMemory() {
 
         <TouchableOpacity
           activeOpacity={0.7}
-          onPress={() => console.log('oi')}
+          onPress={handleCreateMemory}
           className="items-center self-end rounded-full bg-green-500 px-5 py-2"
         >
           <Text className="font-alt text-sm uppercase text-black">Salvar</Text>
