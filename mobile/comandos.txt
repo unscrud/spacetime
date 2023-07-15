@@ -57,3 +57,7 @@ npx expo install expo-router react-native-safe-area-context react-native-screens
 # URL
 https://docs.expo.dev/guides/routing-and-navigation/
 https://expo.github.io/router/docs/
+
+# para trabalhar com imagens da galeria
+npx expo install expo-image-picker
+* URL: https://docs.expo.dev/versions/latest/sdk/imagepicker/
