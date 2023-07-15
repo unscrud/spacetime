@@ -15,19 +15,12 @@ export default function NewMemory() {
   const [content, setContent] = useState('')
 
   async function openImagePicker() {
-    // No permissions request is necessary for launching the image library
     const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: true,
-      aspect: [4, 3],
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
       quality: 1,
     })
 
     console.log(result)
-
-    if (!result.canceled) {
-      setImage(result.assets[0].uri)
-    }
   }
 
   function handleCreateMemory() {
