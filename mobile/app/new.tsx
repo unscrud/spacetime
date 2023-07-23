@@ -32,6 +32,16 @@ export default function NewMemory() {
 
   async function handleCreateMemory() {
     const token = await SecureStore.getItemAsync('token')
+
+    if (preview) {
+      const uploadFormData = new FormData()
+
+      uploadFormData.append('file', {
+        uri: preview,
+        name: 'image.jpg',
+        type: 'image/jpeg',
+      } as any)
+    }
   }
 
   return (
