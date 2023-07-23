@@ -29,8 +29,8 @@ export default function NewMemory() {
     }
   }
 
-  function handleCreateMemory() {
-    console.log(isPublic, content)
+  async function handleCreateMemory() {
+    console.log('criação de memória')
   }
 
   return (
@@ -69,6 +69,7 @@ export default function NewMemory() {
           {preview ? (
             <Image
               source={{ uri: preview }}
+              alt="cover"
               className="h-full w-full rounded-lg object-cover"
             />
           ) : (
@@ -84,6 +85,7 @@ export default function NewMemory() {
         <TextInput
           multiline
           value={content}
+          textAlignVertical="top"
           onChangeText={setContent}
           className="p-0 font-body text-lg text-gray-50"
           placeholder="Fique livre para adicionar fotos, vídeos e relatos sobre essa experiência que você quer lembrar para sempre."
