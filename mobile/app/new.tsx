@@ -1,6 +1,7 @@
 import Icon from '@expo/vector-icons/Feather'
 import * as ImagePicker from 'expo-image-picker'
 import { Link } from 'expo-router'
+import * as SecureStore from 'expo-secure-store'
 import { useState } from 'react'
 import { Image, ScrollView, Switch, Text, TextInput, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
@@ -30,7 +31,7 @@ export default function NewMemory() {
   }
 
   async function handleCreateMemory() {
-    console.log('criação de memória')
+    const token = await SecureStore.getItemAsync('token')
   }
 
   return (
