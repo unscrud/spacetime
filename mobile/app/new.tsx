@@ -7,6 +7,7 @@ import { Image, ScrollView, Switch, Text, TextInput, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import Logo from '../src/assets/logo.svg'
+import { api } from '../src/lib/api'
 
 export default function NewMemory() {
   const { bottom, top } = useSafeAreaInsets()
@@ -32,6 +33,7 @@ export default function NewMemory() {
 
   async function handleCreateMemory() {
     const token = await SecureStore.getItemAsync('token')
+    let coverUrl = ''
 
     if (preview) {
       const uploadFormData = new FormData()
@@ -41,6 +43,16 @@ export default function NewMemory() {
         name: 'image.jpg',
         type: 'image/jpeg',
       } as any)
+
+      const uploadResponse = await api.post('/upload', uploadFormData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      })
+
+      coverUrl = uploadResponse.data.fileUrl
+
+      console.log(coverUrl)
     }
   }
 
