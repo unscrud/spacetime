@@ -54,6 +54,20 @@ export default function NewMemory() {
 
       console.log(coverUrl)
     }
+
+    await api.post(
+      '/memories',
+      {
+        content,
+        isPublic,
+        coverUrl,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    )
   }
 
   return (
