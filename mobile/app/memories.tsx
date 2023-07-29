@@ -20,7 +20,7 @@ export default function NewMemory() {
       className="flex-1 px-8"
       contentContainerStyle={{ paddingBottom: bottom, paddingTop: top }}
     >
-      <View className=" mt-4 flex-row items-center justify-between">
+      <View className="mt-4 flex-row items-center justify-between">
         <Logo />
 
         <View className="flex-row gap-2">
