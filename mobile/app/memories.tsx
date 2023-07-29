@@ -1,15 +1,18 @@
 import Icon from '@expo/vector-icons/Feather'
-import { Link } from 'expo-router'
-import { ScrollView, View } from 'react-native'
+import { Link, useRouter } from 'expo-router'
+import * as SecureStore from 'expo-secure-store'
+import { Image, ScrollView, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import Logo from '../src/assets/logo.svg'
 
 export default function NewMemory() {
   const { bottom, top } = useSafeAreaInsets()
+  const router = useRouter()
 
-  function signOut() {
-    console.log('vai sair')
+  async function signOut() {
+    await SecureStore.deleteItemAsync('token')
+    router.push('/')
   }
 
   return (
@@ -33,6 +36,27 @@ export default function NewMemory() {
               <Icon name="plus" size={16} color="#000" />
             </TouchableOpacity>
           </Link>
+        </View>
+      </View>
+
+      <View className="mt-6 space-y-10">
+        <View className="space-y-4">
+          <Text className="text-white"> Fake Memory </Text>
+        </View>
+        <View className="space-y-4">
+          <Image
+            source={{
+              uri: 'http://192.168.1.3:3333/uploads/98ff924b-d995-4249-92bc-1e2fde466ed5.jpg',
+            }}
+            className="aspect-video w-full rounded-lg"
+            alt=""
+          />
+          <Text className="font-body text-base leading-tight text-gray-100">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+            amet laudantium esse aut sit! Eos mollitia repellendus laborum
+            perferendis porro, magni alias consequuntur non magnam. Impedit
+            corporis modi commodi deleniti?
+          </Text>
         </View>
       </View>
     </ScrollView>
