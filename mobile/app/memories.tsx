@@ -41,7 +41,10 @@ export default function NewMemory() {
 
       <View className="mt-6 space-y-10">
         <View className="space-y-4">
-          <Text className="text-white"> Fake Memory </Text>
+          <View className="flex-row items-center gap-2">
+            <View className="h-px w-5 bg-gray-50" />
+            <Text className="font-body text-xs text-gray-100">Fake Memory</Text>
+          </View>
         </View>
         <View className="space-y-4">
           <Image
