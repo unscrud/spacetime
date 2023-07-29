@@ -8,6 +8,10 @@ import Logo from '../src/assets/logo.svg'
 export default function NewMemory() {
   const { bottom, top } = useSafeAreaInsets()
 
+  function signOut() {
+    console.log('vai sair')
+  }
+
   return (
     <ScrollView
       className="flex-1 px-8"
@@ -16,11 +20,20 @@ export default function NewMemory() {
       <View className=" mt-4 flex-row items-center justify-between">
         <Logo />
 
-        <Link href="/new" asChild>
-          <TouchableOpacity className="h-10 w-10 items-center justify-center rounded-full bg-green-500">
-            <Icon name="plus" size={16} color="#000" />
+        <View className="flex-row gap-2">
+          <TouchableOpacity
+            className="h-10 w-10 items-center justify-center rounded-full bg-red-500"
+            onPress={signOut}
+          >
+            <Icon name="log-out" size={16} color="#000" />
           </TouchableOpacity>
-        </Link>
+
+          <Link href="/new" asChild>
+            <TouchableOpacity className="h-10 w-10 items-center justify-center rounded-full bg-green-500">
+              <Icon name="plus" size={16} color="#000" />
+            </TouchableOpacity>
+          </Link>
+        </View>
       </View>
     </ScrollView>
   )
