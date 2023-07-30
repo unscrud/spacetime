@@ -19,5 +19,7 @@ export default async function Home() {
 
   const memories = response.data
 
-  return <div>{JSON.stringify(memories)}</div>
+  if (memories.length === 0) {
+    return <EmptyMemories />
+  }
 }
