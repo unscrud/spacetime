@@ -61,3 +61,6 @@ https://expo.github.io/router/docs/
 # para trabalhar com imagens da galeria
 npx expo install expo-image-picker
 * URL: https://docs.expo.dev/versions/latest/sdk/imagepicker/
+
+# tratamento de datas
+npm i dayjs
