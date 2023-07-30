@@ -1,10 +1,12 @@
 import Icon from '@expo/vector-icons/Feather'
 import { Link, useRouter } from 'expo-router'
 import * as SecureStore from 'expo-secure-store'
+import { useEffect } from 'react'
 import { Image, ScrollView, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import Logo from '../src/assets/logo.svg'
+import { api } from '../src/lib/api'
 
 export default function NewMemory() {
   const { bottom, top } = useSafeAreaInsets()
@@ -14,6 +16,21 @@ export default function NewMemory() {
     await SecureStore.deleteItemAsync('token')
     router.push('/')
   }
+
+  async function loadMemories() {
+    const token = await SecureStore.getItemAsync('token')
+    const response = await api.get('memories', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+
+    console.log(response.data)
+  }
+
+  useEffect(() => {
+    loadMemories()
+  }, [])
 
   return (
     <ScrollView
