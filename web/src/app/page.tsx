@@ -29,4 +29,16 @@ export default async function Home() {
   if (memories.length === 0) {
     return <EmptyMemories />
   }
+
+  return (
+    <div className="flex flex-col gap-10 p-8">
+      {memories.map((memory) => {
+        return (
+          <div key={memory.id} className="space-y-4">
+            Conteúdo da Memória
+          </div>
+        )
+      })}
+    </div>
+  )
 }
