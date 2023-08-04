@@ -2,6 +2,13 @@ import { EmptyMemories } from '@/components/EmptyMemories'
 import { api } from '@/lib/api'
 import { cookies } from 'next/headers'
 
+interface Memory {
+  id: string
+  coverUrl: string
+  excerpt: string
+  createdAt: string
+}
+
 export default async function Home() {
   const isAutenticated = cookies().has('token')
 
@@ -17,7 +24,7 @@ export default async function Home() {
     },
   })
 
-  const memories = response.data
+  const memories: Memory[] = response.data
 
   if (memories.length === 0) {
     return <EmptyMemories />
