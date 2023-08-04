@@ -50,6 +50,9 @@ export default async function Home() {
               height={580}
               className="aspect-video w-full rounded-lg object-cover"
             />
+            <p className="text-lg leading-relaxed text-gray-100">
+              {memory.excerpt}
+            </p>
           </div>
         )
       })}
