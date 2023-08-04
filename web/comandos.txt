@@ -47,3 +47,6 @@ npm install -D @tailwindcss/forms
 # com 'use client' pegamos o cookie do token de modo diferente
 npm i js-cookie
 npm i --save-dev @types/js-cookie
+
+# tratamento de datas
+npm i dayjs
